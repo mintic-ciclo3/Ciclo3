@@ -1,6 +1,8 @@
-package org.example;
+package org.empresa;
 
-import java.util.ArrayList;
+import org.empresa.model.Empleado;
+import org.empresa.model.Empresa;
+import org.empresa.model.Transaccion;
 
 public class Main {
     public static void main(String[] args) {
@@ -58,7 +60,7 @@ public class Main {
         System.out.println(empleado1.getCargo());
         System.out.println(empleado1.getCorreo());
 
-        MovimientoDinero movimiento1 = new MovimientoDinero(5000000,
+        Transaccion movimiento1 = new Transaccion(5000000,
                 "Caja menor", empleado1);
 
         movimiento1.setConcepto("Compra materiales");
