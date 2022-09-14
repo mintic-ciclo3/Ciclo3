@@ -17,7 +17,7 @@ public class Main {
                 "Av Bolivar # 56-89",
                 "6025692387");
 
-        System.out.println("Empresa 1");
+        System.out.println("EmpresaEntity 1");
         System.out.println(empresa1.getNombreEmpresa());
         System.out.println("NIT " + empresa1.getNIT());
         System.out.println("Direccion " + empresa1.getDireccion());
@@ -29,14 +29,14 @@ public class Main {
         empresa1.setTelefono("6022445896");
 
         System.out.println("\n");
-        System.out.println("Empresa 1");
+        System.out.println("EmpresaEntity 1");
         System.out.println(empresa1.getNombreEmpresa());
         System.out.println("NIT " + empresa1.getNIT());
         System.out.println("Direccion " + empresa1.getDireccion());
         System.out.println("Telefono " + empresa1.getTelefono());
 
         System.out.println("\n");
-        System.out.println("Empresa 2");
+        System.out.println("EmpresaEntity 2");
         System.out.println(empresa2.getNombreEmpresa());
         System.out.println("NIT " + empresa2.getNIT());
         System.out.println("Direccion " + empresa2.getDireccion());
@@ -54,7 +54,7 @@ public class Main {
         empleado1.setCargo("Ingeniero de Proyectos");
 
         System.out.println("\n");
-        System.out.println("Empleado");
+        System.out.println("EmpleadoEntity");
         System.out.println(empleado1.getNombreEmpleado());
         System.out.println(empleado1.getEmpresa().getNombreEmpresa());
         System.out.println(empleado1.getCargo());
@@ -72,6 +72,6 @@ public class Main {
         System.out.println("$ " + movimiento1.getMonto());
         System.out.println("Concepto " + movimiento1.getConcepto());
         System.out.println("Encargado " + movimiento1.getEncargado().getNombreEmpleado());
-        System.out.println("Empresa " + movimiento1.getEncargado().getEmpresa().getNombreEmpresa());
+        System.out.println("EmpresaEntity " + movimiento1.getEncargado().getEmpresa().getNombreEmpresa());
     }
 }
