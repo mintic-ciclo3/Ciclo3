@@ -51,9 +51,8 @@ public class EmpleadoService {
     public ResponseEntity<Empleado> updateEmpleado(Long id, Empleado empleado) {
         try {
             Empleado empleadoUp = empleadoRepository.findById(id).get();
-            //empleadoUp.setId(empleado.getId());
             empleadoUp.setNombreEmpleado(empleado.getNombreEmpleado());
-            //empleadoUp.setEmpresa(empleado.getEmpresa());
+            empleadoUp.setEmpresa(empleado.getEmpresa());
             empleadoUp.setCargo(empleado.getCargo());
             empleadoUp.setCorreo(empleado.getCorreo());
             return new ResponseEntity<Empleado>(empleadoRepository.save(empleadoUp), HttpStatus.OK);
