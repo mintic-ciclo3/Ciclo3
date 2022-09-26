@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -16,13 +18,13 @@ public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column @NotBlank(message = "Name is mandatory")
     private String nombreEmpleado;
-    @Column
+    @Column @NotBlank(message = "Enterprise is mandatory")
     private String empresa; //Cambiar a tipo Empresa
-    @Column
+    @Column @NotBlank(message = "email is mandatory")
     private String correo;
-    @Column
+    @Column @NotBlank(message = "job title is mandatory")
     private String cargo;
 
 }

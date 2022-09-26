@@ -18,7 +18,7 @@ public class Empresa {
     private Long id;
     @Column
     private String nombreEmpresa;
-    @Column
+    @Column(unique = true)
     private String nit;
     @Column
     private String direccion;

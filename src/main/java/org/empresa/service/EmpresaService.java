@@ -16,15 +16,12 @@ public class EmpresaService {
     @Autowired
     private EmpresaRepository empresaRepository;
 
-    public ResponseEntity<List<Empresa>> findAllEmpresas() {
-        try {
-            List<Empresa> empresas = new ArrayList<Empresa>();
-            empresaRepository.findAll().forEach(empresa -> empresas.add(empresa));
-            return new ResponseEntity<>(empresas, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public List<Empresa> findAllEmpresas() {
+        List<Empresa> empresas = new ArrayList<Empresa>();
+        empresaRepository.findAll().forEach(empresa -> empresas.add(empresa));
+        return empresas;
     }
+
 
     public ResponseEntity<Empresa> findEmpresaById(Long id) {
         Optional<Empresa> empresaData = empresaRepository.findById(id);
@@ -35,13 +32,25 @@ public class EmpresaService {
         }
     }
 
-    public ResponseEntity<Empresa> createEmpresa(Empresa empresa) {
+    /*public ResponseEntity<Empresa> createEmpresa(Empresa empresa) {
         try {
             return new ResponseEntity<>(empresaRepository.save(empresa), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }*/
+
+    public Boolean createEmpresa(Empresa empresa) {
+        try {
+            new ResponseEntity<>(empresaRepository.save(empresa), HttpStatus.CREATED);
+            return Boolean.TRUE;
+        } catch (Exception e) {
+            new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return Boolean.FALSE;
+        }
     }
+
+
 
     public ResponseEntity<Empresa> updateEmpresa(Long id, Empresa empresa) {
         try {

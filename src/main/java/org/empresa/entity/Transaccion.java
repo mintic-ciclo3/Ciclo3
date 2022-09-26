@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table
@@ -21,6 +22,7 @@ public class Transaccion {
     @Column
     private String concepto;
     @Column
-    private String encargado;     //Cambiar a tipo Empleado
-
+    private Date fecha;
+    @Column
+    private String responsable;     //Cambiar a tipo Empleado
 }
